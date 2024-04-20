@@ -41,38 +41,37 @@ svAuthor.ShowAll();
 
 Console.WriteLine("------------------- Books ---------------------");
 
+List<Book> books = new List<Book>();
+
 Book newBook = new Book()
 {
     AuthorId = 2,
     Title = "Book 1 - Author 2"
 };
-
-svBook.AddBook(newBook);
+books.Add(newBook);
 
 Book newBook2 = new Book()
 {
     AuthorId = 2,
     Title = "Book 2 - Author 2"
 };
-
-svBook.AddBook(newBook2);
+books.Add(newBook2);
 
 Book newBook3 = new Book()
 {
     AuthorId = 2,
     Title = "Book 3 - Author 2"
 };
-
-svBook.AddBook(newBook3);
-
+books.Add(newBook3);
 
 Book newBook4 = new Book()
 {
     AuthorId = 1,
     Title = "Book 4 - Author 1"
 };
+books.Add(newBook4);
 
-svBook.AddBook(newBook4);
+svBook.AddBooks(books);
 
 svBook.ShowAll();
 
@@ -81,4 +80,19 @@ Author author2 = svAuthor.GetAuthorById(2);
 
 Book book = svBook.GetBookById(1);
 
-Console.WriteLine("");
+Author newAuthor3 = new Author();
+
+newAuthor3.Name = "Author 3";
+newAuthor3.LastName = "Author LastName 3";
+
+Author author3 = svAuthor.AddAuthor(newAuthor3);
+
+foreach (Book bookItem in books)
+{
+    bookItem.AuthorId = author3.Id;
+    bookItem.Title = $"Book {bookItem.Id} - {author3.Name}";
+
+    svBook.UpdateBook(bookItem.Id, bookItem);
+}
+
+svBook.ShowAll();

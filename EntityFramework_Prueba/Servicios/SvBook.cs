@@ -25,6 +25,14 @@ namespace EntityFramework_Prueba.Servicios
             return book;
         }
 
+        public List<Book> AddBooks(List<Book> books)
+        {
+            _myDbContext.Books.AddRange(books);
+            _myDbContext.SaveChanges();
+
+            return books;
+        }
+
         public Book GetBookById(int id)
         {       //_myDbContext.Books.Find(id)
             return _myDbContext.Books.Include(x => x.Author).SingleOrDefault(x => x.Id == id);
@@ -42,6 +50,18 @@ namespace EntityFramework_Prueba.Servicios
                 Console.WriteLine(item.Title);
                 Console.WriteLine("-----------------");
             }
+        }
+
+        public Book UpdateBook(int id, Book book)
+        {
+            Book bookUpdate = _myDbContext.Books.Find(id);
+            bookUpdate.AuthorId = book.AuthorId;
+            bookUpdate.Title = book.Title;
+
+            _myDbContext.Update(bookUpdate);
+            _myDbContext.SaveChanges();
+
+            return book;
         }
         #endregion
     }

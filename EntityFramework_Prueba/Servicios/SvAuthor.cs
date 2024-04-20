@@ -1,5 +1,6 @@
 ﻿using Entidades;
 using EntityFramework_Prueba.MyDbContext;
+using Microsoft.EntityFrameworkCore;
 
 namespace EntityFramework_Prueba.Servicios
 {
@@ -18,9 +19,8 @@ namespace EntityFramework_Prueba.Servicios
         }
 
         public Author GetAuthorById(int id)
-        {
-            //_myDbContext.Authors.Where(x => x.Id == id).Select(item => item).FirstOrDefault();
-            return _myDbContext.Authors.Find(id);
+        {       //_myDbContext.Authors.Find(id)
+            return _myDbContext.Authors.Include(x => x.Books).SingleOrDefault(x => x.Id == id);
         }
         #endregion
 

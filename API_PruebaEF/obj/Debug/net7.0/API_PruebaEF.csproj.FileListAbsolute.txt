@@ -38,3 +38,7 @@ C:\Users\fowks\Downloads\UNA 2024 - Ciclo I\Progra II\POO\EntityFramework_Prueba
 C:\Users\fowks\Downloads\UNA 2024 - Ciclo I\Progra II\POO\EntityFramework_Prueba\API_PruebaEF\bin\Debug\net7.0\Services.dll
 C:\Users\fowks\Downloads\UNA 2024 - Ciclo I\Progra II\POO\EntityFramework_Prueba\API_PruebaEF\bin\Debug\net7.0\Services.pdb
 C:\Users\fowks\Downloads\UNA 2024 - Ciclo I\Progra II\POO\EntityFramework_Prueba\API_PruebaEF\bin\Debug\net7.0\Entidades.pdb
+C:\Users\fowks\Downloads\UNA 2024 - Ciclo I\Progra II\POO\EntityFramework_Prueba\API_PruebaEF\bin\Debug\net7.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\fowks\Downloads\UNA 2024 - Ciclo I\Progra II\POO\EntityFramework_Prueba\API_PruebaEF\bin\Debug\net7.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\fowks\Downloads\UNA 2024 - Ciclo I\Progra II\POO\EntityFramework_Prueba\API_PruebaEF\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\fowks\Downloads\UNA 2024 - Ciclo I\Progra II\POO\EntityFramework_Prueba\API_PruebaEF\bin\Debug\net7.0\Newtonsoft.Json.Bson.dll

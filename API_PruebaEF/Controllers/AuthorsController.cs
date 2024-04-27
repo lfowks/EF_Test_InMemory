@@ -27,6 +27,7 @@ namespace API_PruebaEF.Controllers
         [HttpGet("{id}")]
         public Author Get(int id)
         {
+            var result = _svAuthor.GetAuthorById(id);
             return _svAuthor.GetAuthorById(id);
         }
 
@@ -34,9 +35,7 @@ namespace API_PruebaEF.Controllers
         [HttpPost]
         public void Post([FromBody] Author author)
         {
-            _svAuthor.AddAuthor(new Author { 
-               Name = author.Name, 
-               LastName = author.LastName });
+            _svAuthor.AddAuthor(author);
         }
 
         // PUT api/<AuthorsController>/5

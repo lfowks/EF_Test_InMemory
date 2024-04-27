@@ -15,7 +15,7 @@ namespace Services.Authors
         #region Reads
         public List<Author> GetAllAuthors()
         {
-            return _myDbContext.Authors.ToList();
+            return _myDbContext.Authors.Include(x => x.Books).ToList();
         }
 
         public Author GetAuthorById(int id)
@@ -27,6 +27,7 @@ namespace Services.Authors
         #region Writes
         public Author AddAuthor(Author author)
         {
+          
             _myDbContext.Authors.Add(author);
             _myDbContext.SaveChanges();
 

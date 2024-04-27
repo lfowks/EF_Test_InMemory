@@ -7,6 +7,6 @@
         public string LastName { get; set; }
 
         //Book Relationship
-        public List<Book> Books { get; set; }
+        public List<Book>? Books { get; set; }
     }
 }

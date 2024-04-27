@@ -20,10 +20,9 @@ namespace Services.MyDbContext
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //modelBuilder.Entity<Author>().HasData(
-            //    new Author { Id = 1, Name = "Author 1", LastName = "Author Last Name 1" },
-            //    new Author { Id = 2, Name = "Author 2", LastName = "Author Last Name 1" }
-            //);
+            modelBuilder.Entity<Book>()
+                .HasOne(book => book.Author)
+                .WithMany(author => author.Books);
         }
     }
 }

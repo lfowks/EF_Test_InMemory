@@ -1,6 +1,10 @@
-﻿using Entidades;
+﻿using API_PruebaEF.Extensions;
+using API_PruebaEF.ViewModels;
+using Entidades;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Services.Authors;
+using System.Net;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -25,28 +29,50 @@ namespace API_PruebaEF.Controllers
 
         // GET api/<AuthorsController>/5
         [HttpGet("{id}")]
-        public Author Get(int id)
+        public IActionResult Get(int id)
         {
-            var result = _svAuthor.GetAuthorById(id);
-            return _svAuthor.GetAuthorById(id);
+            try
+            {
+                Author author = _svAuthor.GetAuthorById(id);
+                AuthorGetVm authorVm;
+
+                if (author is null)
+                {
+                    return NotFound(new
+                    {
+                        code = HttpStatusCode.NotFound,
+                        message = "Author Not Found."
+                    });
+                }
+
+                authorVm = author.ToAuthorGetVm();
+
+                return Ok(authorVm);
+            }
+            catch (Exception ex)
+            {
+                //GUARDO EN BITACORA
+
+                return BadRequest();
+            }
         }
 
         // POST api/<AuthorsController>
         [HttpPost]
-        public void Post([FromBody] Author author)
+        public void Post([FromBody] AuthorVm authorVm)
         {
-            _svAuthor.AddAuthor(author);
+            Author newAuthor = authorVm.ToAuthor();
+
+            _svAuthor.AddAuthor(newAuthor);
         }
 
         // PUT api/<AuthorsController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] Author author)
+        public void Put(int id, [FromBody] AuthorVm authorVm)
         {
-            _svAuthor.UpdateAuthor(id, new Author
-            {
-                Name = author.Name,
-                LastName = author.LastName
-            });
+            Author newAuthor = authorVm.ToAuthor();
+
+            _svAuthor.UpdateAuthor(id, newAuthor);
         }
 
         // DELETE api/<AuthorsController>/5

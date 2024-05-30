@@ -27,7 +27,6 @@ namespace Services.Authors
         #region Writes
         public Author AddAuthor(Author author)
         {
-          
             _myDbContext.Authors.Add(author);
             _myDbContext.SaveChanges();
 

@@ -1,4 +1,5 @@
 C:\Users\fowks\Downloads\UNA 2024 - Ciclo I\Progra II\POO\EntityFramework_Prueba\Services\bin\Debug\net7.0\Services.deps.json
+C:\Users\fowks\Downloads\UNA 2024 - Ciclo I\Progra II\POO\EntityFramework_Prueba\Services\bin\Debug\net7.0\Services.runtimeconfig.json
 C:\Users\fowks\Downloads\UNA 2024 - Ciclo I\Progra II\POO\EntityFramework_Prueba\Services\bin\Debug\net7.0\Services.dll
 C:\Users\fowks\Downloads\UNA 2024 - Ciclo I\Progra II\POO\EntityFramework_Prueba\Services\bin\Debug\net7.0\Services.pdb
 C:\Users\fowks\Downloads\UNA 2024 - Ciclo I\Progra II\POO\EntityFramework_Prueba\Services\bin\Debug\net7.0\Entidades.dll
@@ -12,4 +13,5 @@ C:\Users\fowks\Downloads\UNA 2024 - Ciclo I\Progra II\POO\EntityFramework_Prueba
 C:\Users\fowks\Downloads\UNA 2024 - Ciclo I\Progra II\POO\EntityFramework_Prueba\Services\obj\Debug\net7.0\Services.dll
 C:\Users\fowks\Downloads\UNA 2024 - Ciclo I\Progra II\POO\EntityFramework_Prueba\Services\obj\Debug\net7.0\refint\Services.dll
 C:\Users\fowks\Downloads\UNA 2024 - Ciclo I\Progra II\POO\EntityFramework_Prueba\Services\obj\Debug\net7.0\Services.pdb
+C:\Users\fowks\Downloads\UNA 2024 - Ciclo I\Progra II\POO\EntityFramework_Prueba\Services\obj\Debug\net7.0\Services.genruntimeconfig.cache
 C:\Users\fowks\Downloads\UNA 2024 - Ciclo I\Progra II\POO\EntityFramework_Prueba\Services\obj\Debug\net7.0\ref\Services.dll

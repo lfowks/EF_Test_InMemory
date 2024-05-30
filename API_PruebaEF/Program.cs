@@ -1,11 +1,13 @@
 using Services.Authors;
 using Services.Books;
+using Services.Products;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddScoped<ISvAuthor, SvAuthor>();
 builder.Services.AddScoped<ISvBook, SvBook>();
+builder.Services.AddScoped<ISvProduct, SvProduct>();
 
 builder.Services.AddControllers()
     .AddNewtonsoftJson(x =>
@@ -15,7 +17,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("Policy1", builder =>
     {
-        builder.WithOrigins("https://localhost:5173")
+        builder.WithOrigins("http://localhost:5173")
             .WithMethods("GET", "POST")
             .WithHeaders("Content-Type");
     });
@@ -36,6 +38,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors("Policy1");
 
 app.UseAuthorization();
 
